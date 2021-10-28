@@ -13,7 +13,13 @@
 	<version>1.0</version>
 	<name>timesheet-ci</name>
 	<description>timesheet-ci</description>
-
+	
+<repositories>
+<repository>
+<id>maven-group</id>
+<url>http://your-host:8081/repository/maven-group/</url>
+</repository>
+</repositories>
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
