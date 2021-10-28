@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repository.MissionRepository;
@@ -60,8 +61,13 @@ public class MissionServiceImpl implements IMissionService{
 
 	@Override
 	public Mission retrieveMission(String id) {
+		
 		l.info("in  retrieveMission id = " + id);
-		return null;
+		Mission m = missionRepository.findById(Integer.parseInt(id)).orElse(null) ;
+		l.info("mission returned : " + m);
+		return m;
+		
+		
 	}
 
 
