@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.entities.User;
-import tn.esprit.spring.services.IContratService;
+import tn.esprit.spring.services.*;
 import tn.esprit.spring.services.IUserService;
 
 
@@ -60,7 +60,7 @@ public class ContratServiceImplTest {
 			
 			@Test
 			public void testDeleteContrat() {
-				us.deleteContrat(11) ;
+				us.deleteContrat(30);
 				//Assert.assertNull(us.retrieveUser("3"));
 				//eee
 			}
