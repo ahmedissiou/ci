@@ -53,17 +53,6 @@ public class EmployeServiceImplTest {
 			//Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
 	
-		@Test
-		public void testRetrieveUser() {
-		//	Employe empRetrieved = us.retrieveEmployee(1); 
-	//	Assert.assertEquals(1L, empRetrieved.getId());
-		}
-		
-		@Test
-		public void testDeleteUser() {
-		//	us.deleteEmployee(3);
-		//Assert.assertNull(us.retrieveEmployee(3));
-		}
 		
 		// 5 tests unitaires  
  

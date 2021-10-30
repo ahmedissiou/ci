@@ -51,7 +51,7 @@ public class UserServiceImplTest {
 			Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
 	
-	
+		
 		
 		// 5 tests unitaires  
 		
