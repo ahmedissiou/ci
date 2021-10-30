@@ -22,10 +22,10 @@
 <repositories>
 <repository>
 <id>maven-group</id>
-<url>http://localgist:8081/repository/maven-group/</url>
+<url>http://localhost:8081/repository/maven-group/</url>
 </repository>
 </repositories>
-</project>
+
  <distributionManagement>
         <repository>
             <id>maven.jenkins-ci.org</id>
