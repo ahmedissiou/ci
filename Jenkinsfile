@@ -7,7 +7,7 @@ pipeline {
        stage ('GIT') {
             steps {
                echo "Getting Project from Git"; 
-                git branch: "main", 
+                git branch: "ahmed", 
                     url: "https://github.com/ahmedissiou/ci.git",
                     credentialsId: "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"; 
             }
