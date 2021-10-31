@@ -29,7 +29,7 @@ public class DepartementServiceImplTest {
 		@Test
 		public void testRetrieveAllUsers() {
 			List<Departement> listDepartemetns = ds.retrieveAllDepartements(); 
-			// if there are 7 users in DB : 
+			 //if there are 7 users in DB : 
 			//Assert.assertEquals(1, listUsers.size());
 		}
 		
@@ -45,19 +45,19 @@ public class DepartementServiceImplTest {
 		public void testModifyDepartement() throws ParseException   {
 			Departement d = new Departement(""); 
 			Departement departementUpdated  = ds.updateDepartement(d); 
-		//	Assert.assertEquals(d.getName(), departementUpdated.getName());
+		    Assert.assertEquals(d.getName(), departementUpdated.getName());
 		}
 	
 		@Test
 		public void testRetrieveDepartement() {
 			Departement departementRetrieved = ds.retrieveDepartement("4"); 
-			//Assert.assertEquals(1L, departementRetrieved.getId());
+			Assert.assertEquals(1L, departementRetrieved.getId());
 		}
 		
 		@Test
 		public void testDeleteUser() {
 			ds.deleteDepartement("9");
-			//Assert.assertNull(us.retrieveUser("3"));
+			Assert.assertNull(ds.retrieveDepartement("3"));
 		}
 		
 		// 5 tests unitaires  

@@ -23,7 +23,7 @@ import tn.esprit.spring.services.IUserService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EmployeServiceImplTest {
-
+/*
 		@Autowired
 		IEmployeService us; 
 	
@@ -66,7 +66,7 @@ public class EmployeServiceImplTest {
 		}
 		
 		// 5 tests unitaires  
- 
+ */
 }
 
 
