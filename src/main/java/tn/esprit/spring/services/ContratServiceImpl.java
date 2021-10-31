@@ -28,7 +28,7 @@ public class ContratServiceImpl implements IContratService {
 			l.info("In retrieveAllContrats() : ");
 			contrats = (List<Contrat>) ContratRepository.findAll();  
 			for (Contrat contrat : contrats) {
-				l.debug("user +++ : " + contrat);
+				l.debug("contract +++ : " + contrat);
 			} 
 			l.info("Out of retrieveAllContrats() : ");
 		}catch (Exception e) {
