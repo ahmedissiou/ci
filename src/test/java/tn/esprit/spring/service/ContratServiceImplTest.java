@@ -61,7 +61,7 @@ public class ContratServiceImplTest {
 			
 			@Test
 			public void testDeleteContrat() {
-				 us.deleteContrat(33);
+				 us.deleteContrat(34);
 				//Assert.assertNull(us.retrieveContrat(7));
 				
 			}
