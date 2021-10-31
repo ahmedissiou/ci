@@ -19,11 +19,15 @@ pipeline {
                 bat "mvn clean package -DskipTests"
             }
         }
-        
         stage("Sonar") {
             steps {
                 bat "mvn sonar:sonar"
             }
+        }
+        stage("Email Notification") {
+          
+              mail bcc: '', body: 'Bonjour , pipeline est en cours d\'execution ', cc: '', from: '', replyTo: '', subject: 'Jenkins', to: 'ahmed.issiou@esprit.tn'
+            
         }
         
         stage("DEPLOY") {
