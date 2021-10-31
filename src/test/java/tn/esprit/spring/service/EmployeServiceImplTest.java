@@ -31,7 +31,7 @@ public class EmployeServiceImplTest {
 		public void testRetrieveAllEmp() {
 			List<Employe> listEmp = us.retrieveAllEmployees(); 
 			// if there are 7 users in DB : 
-			//Assert.assertEquals(15, listUsers.size());
+		Assert.assertEquals(15, listEmp.size());
 		}
 		
 		
