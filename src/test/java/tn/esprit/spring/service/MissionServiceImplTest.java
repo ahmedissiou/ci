@@ -26,14 +26,14 @@ public class MissionServiceImplTest {
 	@Test
 	public void testRetrieveAllMissions() {
 		List<Mission> listMissions = ms.retrieveAllMissions(); 
-		Assert.assertEquals(12, listMissions.size());
+		Assert.assertEquals(14, listMissions.size());
 	}
 	
 	
 	@Test
 	public void testAddMission() throws ParseException {
 		
-		Mission m = new Mission("recru", "recrutement"); 
+		Mission m = new Mission("dev", "developpement"); 
 		Mission missionAdded = ms.addMission(m); 
 		Assert.assertEquals(m.getName(), missionAdded.getName());
 	}
@@ -41,7 +41,7 @@ public class MissionServiceImplTest {
 	@Test
 	public void testModifyMission() throws ParseException   {
 		
-		Mission m = new Mission(24,"recru", "recrutement"); 
+		Mission m = new Mission(27,"main", "maintenance"); 
 		Mission missionUpdated  = ms.updateMission(m); 
 		Assert.assertEquals(m.getName(), missionUpdated.getName());
 	}
@@ -54,8 +54,8 @@ public class MissionServiceImplTest {
 	
 	@Test
 	public void testDeleteMission() {
-		ms.deleteMission("25");
-		Assert.assertNull(ms.retrieveMission("25"));
+		ms.deleteMission("23");
+		Assert.assertNull(ms.retrieveMission("23"));
 	}
 	
 
