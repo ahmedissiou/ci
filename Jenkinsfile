@@ -20,6 +20,19 @@ pipeline {
                 // sh "mvn clean package -DskipTests" pour une machine linux
             }
         }
+		
+		stage ("Email Notification") {
+            steps {
+                mail bcc: '', body: '''Hi Farah,
+
+                        Your last pipeline build is complete!
+
+                        Regards.
+
+                        NOTE: Please do not reply to this email.''', cc: '', from: '', replyTo: '', subject: 'Jenkins Pipeline', to: 'farahayari7262@gmail.com'   
+            
+            }
+        }
         
         stage("Sonar") {
             steps {
@@ -29,7 +42,7 @@ pipeline {
         
         stage("DEPLOY") {
             steps {
-                bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=2.2 -DgeneratePom=true -Dpackaging=jar  -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-2.2.jar"
+                bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=2.3 -DgeneratePom=true -Dpackaging=jar  -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-2.3.jar"
             }
         }
     }
