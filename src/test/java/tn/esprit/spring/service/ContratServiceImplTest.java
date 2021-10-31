@@ -42,6 +42,7 @@ public class ContratServiceImplTest {
 				Contrat contratAdded = us.addContrat(c) ;
 			//	Assert.assertEquals(contratAdded.getTypeContrat(), contratAdded.getSalaire());
 			}
+			
 		 
 			@Test
 			public void testModifyContrat() throws ParseException   {
@@ -60,9 +61,9 @@ public class ContratServiceImplTest {
 			
 			@Test
 			public void testDeleteContrat() {
-				 us.deleteContrat(32);
+				 us.deleteContrat(33);
 				//Assert.assertNull(us.retrieveContrat(7));
-				//eee
+				
 			}
 			
 			// 5 tests unitaires  
