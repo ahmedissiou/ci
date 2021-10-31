@@ -25,9 +25,9 @@ pipeline {
             }
         }
         stage("Email Notification") {
-          
+            steps {
               mail bcc: '', body: 'Bonjour , pipeline est en cours d\'execution ', cc: '', from: '', replyTo: '', subject: 'Jenkins', to: 'ahmed.issiou@esprit.tn'
-            
+            }
         }
         
         stage("DEPLOY") {
