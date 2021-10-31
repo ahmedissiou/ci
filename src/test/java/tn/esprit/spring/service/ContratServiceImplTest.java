@@ -49,19 +49,19 @@ public class ContratServiceImplTest {
 				Date d = dateFormat.parse("2015-03-23");
 				Contrat c = new Contrat(d , "Par ans", 800);  
 				Contrat contratUpdated  = us.updateContrat(c); 
-			//	Assert.assertEquals(c.getTypeContrat(), contratUpdated.getTypeContrat());
+				Assert.assertEquals(c.getTypeContrat(), contratUpdated.getTypeContrat());
 			}
 		
 			@Test
 			public void testRetrieveContrat() {
 			Contrat contratRetrieved = us.retrieveContrat(7); 
-			//Assert.assertEquals(1L, contratRetrieved.getReference());
+			Assert.assertEquals(1L, contratRetrieved.getReference());
 			}
 			
 			@Test
 			public void testDeleteContrat() {
-				//us.deleteContrat(30);
-				//Assert.assertNull(us.retrieveUser("3"));
+				 us.deleteContrat(31);
+				Assert.assertNull(us.retrieveContrat(7));
 				//eee
 			}
 			
