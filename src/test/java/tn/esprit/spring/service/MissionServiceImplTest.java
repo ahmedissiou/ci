@@ -33,7 +33,7 @@ public class MissionServiceImplTest {
 	@Test
 	public void testAddMission() throws ParseException {
 		
-		Mission m = new Mission("dev", "developpement"); 
+		Mission m = new Mission("recru", "recrutement"); 
 		Mission missionAdded = ms.addMission(m); 
 		Assert.assertEquals(m.getName(), missionAdded.getName());
 	}
@@ -54,8 +54,8 @@ public class MissionServiceImplTest {
 	
 	@Test
 	public void testDeleteMission() {
-		ms.deleteMission("31");
-		Assert.assertNull(ms.retrieveMission("31"));
+		ms.deleteMission("32");
+		Assert.assertNull(ms.retrieveMission("32"));
 	}
 	
 
