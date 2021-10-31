@@ -22,17 +22,18 @@ public class MissionServiceImplTest {
 	@Autowired
 	IMissionService ms;
 	
+	
 	@Test
 	public void testRetrieveAllMissions() {
 		List<Mission> listMissions = ms.retrieveAllMissions(); 
-		Assert.assertEquals(3, listMissions.size());
+		Assert.assertEquals(12, listMissions.size());
 	}
 	
 	
 	@Test
 	public void testAddMission() throws ParseException {
 		
-		Mission m = new Mission("main", "maintenance"); 
+		Mission m = new Mission("recru", "recrutement"); 
 		Mission missionAdded = ms.addMission(m); 
 		Assert.assertEquals(m.getName(), missionAdded.getName());
 	}
@@ -40,22 +41,22 @@ public class MissionServiceImplTest {
 	@Test
 	public void testModifyMission() throws ParseException   {
 		
-		Mission m = new Mission(6,"dev", "developpement"); 
+		Mission m = new Mission(24,"recru", "recrutement"); 
 		Mission missionUpdated  = ms.updateMission(m); 
 		Assert.assertEquals(m.getName(), missionUpdated.getName());
 	}
 
 	@Test
 	public void testRetrieveMission() {
-		Mission missionRetrieved = ms.retrieveMission("1"); 
-		Assert.assertEquals(1,missionRetrieved.getId());
-	}
-	/*
-	@Test
-	public void testDeleteMission() {
-		ms.deleteMission("5");
-		Assert.assertNull(ms.retrieveMission("5"));
+		Mission missionRetrieved = ms.retrieveMission("20"); 
+		Assert.assertEquals(20,missionRetrieved.getId());
 	}
 	
-*/
+	@Test
+	public void testDeleteMission() {
+		ms.deleteMission("25");
+		Assert.assertNull(ms.retrieveMission("25"));
+	}
+	
+
 }
