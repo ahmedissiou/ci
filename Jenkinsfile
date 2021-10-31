@@ -29,7 +29,7 @@ pipeline {
         
         stage("DEPLOY") {
             steps {
-				
+		bat "mvn install"		
                 bat "mvn clean install deploy:deploy-file -DskipTests  -DgroupId=tn.esprit.spring -DartifactId=timesheet -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-1.0.jar"
             }
         }
