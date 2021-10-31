@@ -31,7 +31,7 @@ public class ContratServiceImplTest {
 				List<Contrat> listContrats = us.retrieveAllContrats(); 
 				// if there are 7 contracts in DB : 
 				List<Contrat> Contrats = us.retrieveAllContrats() ;
-				 Assert.assertEquals(84, listContrats.size());
+				 Assert.assertEquals(87, listContrats.size());
 			}
 			
 			
