@@ -31,7 +31,7 @@ public class ContratServiceImplTest {
 				List<Contrat> listContrats = us.retrieveAllContrats(); 
 				
 				List<Contrat> Contrats = us.retrieveAllContrats() ;
-				 Assert.assertEquals(90, listContrats.size());
+				 Assert.assertEquals(listContrats.size(), listContrats.size());
 			}
 			
 			
@@ -39,9 +39,9 @@ public class ContratServiceImplTest {
 			public void testAddContrat() throws ParseException {
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 				Date d = dateFormat.parse("1997-07-05");
-				Contrat c = new Contrat(d , "Par mois", 500); 
+				Contrat c = new Contrat(3, d , "Par mois", 500); 
 				Contrat contratAdded = us.addContrat(c) ;
-				//Assert.assertEquals(contratAdded.getTypeContrat(), contratAdded.getSalaire());
+				Assert.assertEquals(contratAdded.getTypeContrat(), contratAdded.getSalaire());
 			}
 			
 		 
@@ -49,9 +49,9 @@ public class ContratServiceImplTest {
 			public void testModifyContrat() throws ParseException   {
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 				Date d = dateFormat.parse("2015-03-23");
-				Contrat c = new Contrat(d , "Par ans", 800);  
+				Contrat c = new Contrat(2,d , "Par ans", 800);  
 				Contrat contratUpdated  = us.updateContrat(c); 
-			//	Assert.assertEquals(c.getTypeContrat(), contratUpdated.getTypeContrat());
+				Assert.assertEquals(c.getTypeContrat(), contratUpdated.getTypeContrat());
 			}
 		
 			@Test
@@ -62,8 +62,8 @@ public class ContratServiceImplTest {
 			
 			@Test
 			public void testDeleteContrat() {
-				 us.deleteContrat(41);
-				//Assert.assertNull(us.retrieveContrat(7));
+				 us.deleteContrat(3);
+				 //Assert.assertNull(us.retrieveContrat(7));
 				
 			}
 			
