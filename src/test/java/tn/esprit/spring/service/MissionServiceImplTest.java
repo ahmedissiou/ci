@@ -26,7 +26,7 @@ public class MissionServiceImplTest {
 	@Test
 	public void testRetrieveAllMissions() {
 		List<Mission> listMissions = ms.retrieveAllMissions(); 
-		Assert.assertEquals(15, listMissions.size());
+		Assert.assertEquals(16, listMissions.size());
 	}
 	
 	
@@ -54,8 +54,8 @@ public class MissionServiceImplTest {
 	
 	@Test
 	public void testDeleteMission() {
-		ms.deleteMission("35");
-		Assert.assertNull(ms.retrieveMission("35"));
+		ms.deleteMission("37");
+		Assert.assertNull(ms.retrieveMission("37"));
 	}
 	
 
