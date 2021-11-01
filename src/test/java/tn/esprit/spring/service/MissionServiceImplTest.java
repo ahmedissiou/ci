@@ -54,8 +54,8 @@ public class MissionServiceImplTest {
 	
 	@Test
 	public void testDeleteMission() {
-		ms.deleteMission("38");
-		Assert.assertNull(ms.retrieveMission("38"));
+		ms.deleteMission("39");
+		Assert.assertNull(ms.retrieveMission("39"));
 	}
 	
 
