@@ -23,7 +23,7 @@ pipeline {
         
         stage("Sonar") {
             steps {
-                bat "mvn sonar:sonar"
+                bat "./mvnw sonar:sonar -Dsonar.login=2a6fa47f839e934db3056cc54aed3286c1b09af2 -Dsonar.host.url=http://localhost:9000"
             }
         }
         
@@ -44,9 +44,9 @@ pipeline {
 	    
 	    stage('JaCoCo') {
      steps {
-        bat './jenkins_build.sh'
-        junit '*/build/test-results/*.xml'
-        step( [ $class: 'JacocoPublisher' ] ))
+        
+       junit 'target/surefire-reports/**/*.xml'
+       jacoco()
      }
 }
     
