@@ -41,6 +41,17 @@ pipeline {
         cdt''', cc: '', from: '', replyTo: '', subject: 'Jenkins job email Notification', to: 'selimaouini1@gmail.com'	 
 		 }
 	    }
+	    
+	    stage ("JaCoCo"){
+	       steps{
+	       junit '**/target/surefire-reports/TEST-*.xml'
+           archive 'target/*.jar'
+           step( [ $class: 'JacocoPublisher' ] )
+	       
+	       
+	       }
+	    
+	    }
     
     }
    
