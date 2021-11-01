@@ -45,9 +45,9 @@ pipeline {
                 bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=2.6 -DgeneratePom=true -Dpackaging=jar  -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-2.6.jar"
             }
         }
-    }
     
-    stage('Publish Test Coverage Report') {
+    
+    stage("Publish Test Coverage Report") {
          steps {
            step([$class: 'JacocoPublisher', 
                 execPattern: '*/build/jacoco/.exec',
@@ -57,7 +57,7 @@ pipeline {
                 ])
             }
         }
-   
+   }
     post {
         always {
             cleanWs()
