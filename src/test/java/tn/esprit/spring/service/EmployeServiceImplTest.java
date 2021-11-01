@@ -66,8 +66,8 @@ public class EmployeServiceImplTest {
 		@Test
 		public void testDeleteEmp() {
 		
-			//Assert.assertNull(us.retrieveEmployee(9));
-			//us.deleteEmployee(9);
+			Assert.assertNull(us.retrieveEmployee(9));
+			us.deleteEmployee(9);
 		}
  
 }
