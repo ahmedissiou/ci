@@ -46,7 +46,7 @@ pipeline {
      steps {
         bat './jenkins_build.sh'
         junit '*/build/test-results/*.xml'
-        step( [ $class: 'JacocoPublisher' ] )
+        step( [ $class: 'JacocoPublisher' ] ))
      }
 }
     
