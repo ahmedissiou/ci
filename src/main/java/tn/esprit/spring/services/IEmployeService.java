@@ -11,7 +11,7 @@ public interface IEmployeService {
 	void deleteEmployee(int id);
 	Employe updateEmployee(Employe u);
 	//Employe retrieveEmployee(int i);
-	Employe retrieveEmployee(int id);
+	public Employe retrieveEmployee(int id);
 
 } 
  

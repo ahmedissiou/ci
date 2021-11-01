@@ -7,7 +7,11 @@ pipeline {
        stage ('GIT') 
             steps {
              echo "Getting Project from Git"; 
+<<<<<<< HEAD
              git branch: "ahmed", 
+=======
+         //       git branch: "ahmed", 
+>>>>>>> b4c82c49a0e4476a6682d02a6af586f036030ecb
                     url: "https://github.com/ahmedissiou/ci.git",
                     credentialsId: "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"; 
             }
@@ -44,4 +48,8 @@ pipeline {
         }
     }
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b4c82c49a0e4476a6682d02a6af586f036030ecb

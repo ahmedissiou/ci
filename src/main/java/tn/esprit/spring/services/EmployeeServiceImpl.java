@@ -47,6 +47,7 @@ public class EmployeeServiceImpl implements IEmployeService {
 
 	@Override
 	public Employe addEmployee(Employe u) {
+		
 		return employerepository.save(u); 
 	}
 

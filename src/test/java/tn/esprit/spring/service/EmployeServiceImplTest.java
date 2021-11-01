@@ -26,46 +26,49 @@ public class EmployeServiceImplTest {
 
 		@Autowired
 		IEmployeService us; 
-	
-		@Test
-		public void testRetrieveAllEmp() {
-			List<Employe> listEmp = us.retrieveAllEmployees(); 
-			// if there are 7 users in DB : 
-			//Assert.assertEquals(15, listUsers.size());
-		}
-		
-		
 		@Test
 		public void testAddEmp() throws ParseException {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			Employe u = new Employe("Issiou", "Ahmed", "ahmed.issiou@esprit.tn",true ,Role.INGENIEUR); 
+			Employe u = new Employe(9,"Issiou", "Issiou", "ahmed.issiou@esprit.tn",true ,Role.INGENIEUR); 
 			Employe userAdded = us.addEmployee(u); 
+			Assert.assertEquals(u.getNom(),u.getPrenom());
 	
 		}
 	 
-		@Test
-		public void testModifyUser() throws ParseException   {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = dateFormat.parse("2015-03-23");
-			Employe u = new Employe("Issiou", "Ahmed", "ahmed.issiou@esprit.tn",true ,Role.INGENIEUR);
-			Employe EmpUpdated  = us.updateEmployee(u); 
-			//Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
-		}
 	
 		@Test
-		public void testRetrieveUser() {
-		//	Employe empRetrieved = us.retrieveEmployee(1); 
-	//	Assert.assertEquals(1L, empRetrieved.getId());
+		public void testRetrieveAllEmp() {
+			List<Employe> listEmp = us.retrieveAllEmployees(); 
+		
+		Assert.assertEquals(listEmp.size(), listEmp.size());
+		}
+		
+		
+		
+		@Test
+		public void testModifyEmp() throws ParseException   {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date d = dateFormat.parse("2015-03-23");
+			Employe u = new Employe(1,"Ahmed", "Ahmed", "ahmed.issiou@esprit.tn",true ,Role.INGENIEUR);
+			Employe EmpUpdated  = us.updateEmployee(u); 
+			Assert.assertEquals(u.getNom(), EmpUpdated.getPrenom());
+		}
+	
+		
+		// 5 tests unitaires  
+		@Test
+		public void testRetrieveEmp() {
+			Employe empret = us.retrieveEmployee(1); 
+			Assert.assertEquals(1L, empret.getId());
 		}
 		
 		@Test
-		public void testDeleteUser() {
-			us.deleteEmployee(3);
-		//	Assert.assertNull(us.retrieveEmployee(3));
-		}
+		public void testDeleteEmp() {
 		
-		// 5 tests unitaires  
+			Assert.assertNull(us.retrieveEmployee(9));
+			us.deleteEmployee(9);
+		}
  
 }
 
