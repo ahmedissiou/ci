@@ -23,7 +23,7 @@ pipeline {
         
         stage("Sonar") {
             steps {
-                bat "./mvnw sonar:sonar -Dsonar.login=2a6fa47f839e934db3056cc54aed3286c1b09af2 -Dsonar.host.url=http://localhost:9000"
+                bat "mvn sonar:sonar -Dsonar.login=2a6fa47f839e934db3056cc54aed3286c1b09af2 -Dsonar.host.url=http://localhost:9000"
             }
         }
         
