@@ -42,16 +42,13 @@ pipeline {
 		 }
 	    }
 	    
-	    stage ("JaCoCo"){
-	       steps{
-	       junit '**/target/surefire-reports/TEST-*.xml'
-           archive 'target/*.jar'
-           step( [ $class: 'JacocoPublisher' ] )
-	       
-	       
-	       }
-	    
-	    }
+	    stage('JaCoCo') {
+     steps {
+        bat './jenkins_build.sh'
+        junit '*/build/test-results/*.xml'
+        step( [ $class: 'JacocoPublisher' ] )
+     }
+}
     
     }
    
