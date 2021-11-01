@@ -19,6 +19,7 @@ pipeline {
                 bat "mvn clean package -DskipTests"
             }
         }
+        //hello
         stage("Sonar") {
             steps {
                 bat "mvn sonar:sonar"
